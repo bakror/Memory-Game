@@ -38,4 +38,3 @@ Memory-Game └──
     ├── main.css
     ├── main.js
     └── README.md
-```# Memory-Game
