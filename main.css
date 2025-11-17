@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #f9f9f9);
+    color: #333;
+}
+
+.control-buttons {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background-color: #0c63baf2;
+}
+.control-buttons span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    background-color: #f44336;
+    padding: 15px 25px;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.info-container {
+    max-width: 1080px;
+    margin: 20px auto;
+    background-color: #ffffff;
+    padding: 20px 25px;
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    font-weight: 500;
+}
+
+.game-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.game-container .game-block {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.game-container .game-block:hover {
+    transform: scale(1.06);
+}
+
+.game-container .game-block .front,
+.game-container .game-block .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 140px;
+    font-weight: bold;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+    transition: background 0.3s ease;
+}
+
+.game-container .game-block .front {
+    background: linear-gradient(135deg, #4b6cb7, #182848);
+    color: #fff;
+}
+
+.game-container .game-block .back {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    transform: rotateY(180deg);
+    color: #fff;
+}
+
+.game-container .game-block .back i {
+    font-size: 120px;
+}
+
+.game-container .game-block.flipped {
+    transform: rotateY(180deg);
+}
+
+.no-clicking {
+    pointer-events: none;
+}
+.has-match {
+    transform: rotateY(180deg);
+    pointer-events: none;
+    
+}
